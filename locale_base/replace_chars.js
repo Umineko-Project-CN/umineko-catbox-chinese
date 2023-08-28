@@ -3,9 +3,7 @@
 
 const fs = require('fs')
 
-const intlCharacters = [ // List all of your language's non-Latin chars here.
-
-]
+const intlCharacters = fs.readFileSync('replace_chars.txt', 'utf-8').split('\n').map(x => x.trim()).filter(x => x)
 
 let script = fs.readFileSync('script.rb', 'utf-8')
 
