@@ -27,7 +27,7 @@ I love you, my heart.
 Note: the **canonical link** for this project is [https://andolga.github.io/umineko-catbox-english](https://andolga.github.io/umineko-catbox-english). If you wish to link to this project, please use this link.
 However, you are free -- in fact, *encouraged* -- to re-host/mirror the downloads for the project on alternate sources, as long as you backlink to the canonical URL.
 
-Note 2: the project is **finished**. It provides a fully English-translated experience with the game. I remain available for fixing bugs, typos, and installation support, but no new features will be added to the project. This also means I will not update the patch for working with any re-release of Umineko that may happen in the future.
+Note 2: the project is **finished**. It provides a fully English-translated experience with the game. No further work is necessary or will be done on it.
 
 # English patch for Umineko Catbox
 
@@ -126,6 +126,6 @@ There is a fair number of [translations of Umineko to other languages](https://g
 
 If you wish to create your own fan translation, please check the documentation [here](https://github.com/andOlga/umineko-catbox-english/blob/rebirth/CONTRIBUTING.md). **I will most likely not be able to provide any assistance beyond what's written in these docs.**
 
-## Support
+## Support/Contact
 
-If you find a bug in the patch, please use the [issue tracker](https://github.com/andOlga/umineko-catbox-english/issues). If you have a question, please use the [forums](https://github.com/andOlga/umineko-catbox-english/discussions). Note that any modifications to the game that aren't translation-related are explicitly out of scope of this project, please refrain from making such requests. This includes fixing the couple of bugs that are present in the original Japanese release.
+I no longer provide any support for this project. If you cannot figure out how to follow the instructions, ask people in the community. Unless you know me personally, do not attempt to contact me about any issues relating to this project. You will be blocked without a reply.
