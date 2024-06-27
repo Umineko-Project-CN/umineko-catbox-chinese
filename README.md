@@ -12,7 +12,7 @@ that she would want others to experience a truly "perfect" version of this incre
 So I shall do both. The [master](https://github.com/andOlga/umineko-catbox-english/tree/master) branch is left as-is, untouched, at the day of her passing, save for this notice at the top.
 The release that most closely corresponds to this state is [v9.9.99999](https://github.com/andOlga/umineko-catbox-english/releases/tag/v9.9.99999).
 
-All of the new development on this project shall happen on the `rebirth` branch.
+The finished, perfect version of the patch is sourced from the [rebirth](https://github.com/andOlga/umineko-catbox-english/tree/rebirth) branch, and the release that corresponds to it is [v82.7.2](https://github.com/andOlga/umineko-catbox-english/releases/tag/v82.7.2).
 
 Rest in peace, Tara.
 
