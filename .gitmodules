@@ -1,0 +1,3 @@
+[submodule "text/umineko-scripting"]
+	path = text/umineko-scripting
+	url = https://github.com/Umineko-Project-CN/umineko-scripting.git
