@@ -1,0 +1,26 @@
+name: Dependabot Auto Merge
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - rebirth
+
+jobs:
+  auto-merge:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Auto-merge Dependabot PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              merge_method: 'squash'
+            })
