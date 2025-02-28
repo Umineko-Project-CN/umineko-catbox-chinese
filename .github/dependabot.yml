@@ -5,3 +5,9 @@ updates:
     schedule:
         interval: "daily"
     directory: "/"
+    allow:
+      - dependency-type: "all"
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
+      include: "scope"
