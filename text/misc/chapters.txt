@@ -162,7 +162,7 @@ GM
 茶会
 ????
 Story01 Letter of Bernkastel
-Story02 魔女们的七夕不轻松
+Story02 魔女们的七夕不甜蜜
 Story03 GM战人
 Story04 朱志香的母亲节礼物
 Story05 朱志香与恋爱的咒语

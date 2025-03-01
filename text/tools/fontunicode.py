@@ -20,7 +20,7 @@ f_bold_lib = "f_bold"
 f_system_lib = "f_system"
 
 # Chapters额外字段
-chap_ex = ["选项", "汝是否要将猫杀死"]
+chap_ex = ["选项", "汝是否要将猫杀死", "轻"] # 为防止字符错位而加入“轻”
 
 # 特殊标点转换
 other_map = {
