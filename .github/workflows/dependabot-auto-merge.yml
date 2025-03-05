@@ -5,6 +5,10 @@ on:
     types: [opened, reopened, synchronize]
     branches:
       - rebirth
+      
+permissions:
+  pull-requests: write
+  contents: write
 
 jobs:
   auto-merge:
