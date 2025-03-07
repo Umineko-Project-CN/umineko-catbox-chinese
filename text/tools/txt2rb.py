@@ -33,7 +33,7 @@ SPACE_replace = r"{text}@"
 # 英文数字防断行
 RUBY_pattern = r"(@b.*?@<.*?@>)"
 ALPHANUM_replaces = {
-    r"([A-Za-zè0-9+\-×÷=%,.?!'&]{2,})": r"@b.@<{text}@>",
+    r"([A-Za-zè0-9\-%,.?!'&]{2,})": r"@b.@<{text}@>",
     r"@@b\.@<([crz](?:[0-9]+)?.?)@>": r"@{text}",
     r"@@b\.@<r(.*?)@>": r"@r@b.@<{text}@>",
 }
