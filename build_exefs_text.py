@@ -1,7 +1,7 @@
 import struct
 import sys
 
-with open("exefs_texts.txt", 'r') as f:
+with open("exefs_texts.txt", 'r', encoding='utf-8') as f:
     Offsets = [line.split("\t", -1)[0] for line in f]
     f.seek(0,0)
     Texts = [line.split("\t", -1)[1] for line in f]

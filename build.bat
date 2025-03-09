@@ -1,2 +1,2 @@
-wsl ./build.sh
+powershell ./build.ps1
 pause

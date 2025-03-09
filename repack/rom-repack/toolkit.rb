@@ -259,7 +259,7 @@ def load_packed_file_from_folder_recursive(path, name = :root, replacements = {}
         puts "Performing replacement: #{entry}"
         result << FileToPack.new(entry, false, replacements[entry])
       else
-        result << FileToPack.new(entry, false, File.read(entry_path))
+        result << FileToPack.new(entry, false, File.binread(entry_path))
       end
     end
   end
