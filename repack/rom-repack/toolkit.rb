@@ -2,6 +2,7 @@
 
 require 'stringio'
 require 'digest'
+require 'tempfile'
 
 # Represents an individual file or folder to be packed into a rom file.
 # `name`: the filename or folder name, not including parent folders.
@@ -47,7 +48,7 @@ class KalRom2File
     @next_file = header_size # where the next file should be written (at the end of the header, initially)
 
     # Write the initial bytes of the rom file
-    @s = StringIO.new
+    @s = Tempfile.new('KalRom')
     @s.binmode
     @s.write("ROM2") # Magic bytes
     @s.write([val1, val2].pack('S<S<')) # two unknown values that differ by game
@@ -126,15 +127,20 @@ class KalRom2File
     # Write the bulk of the header itself
     @s.write(header.string)
 
-    puts "Writing to string..."
-    full_data = @s.string
-
+    full_data_length = @s.length
     align = (1 << FILE_ALIGNMENT) - 1
-    fill = ((full_data.length + align) & ~align) - full_data.length
+    fill = ((full_data_length + align) & ~align) - full_data_length
+
     puts "Got data, writing to file..."
+    @s.rewind
     f = File.open(path, 'wb')
-    f.write(full_data)
+    while (chunk = @s.read(32768))
+      f.write(chunk)
+    end
     f.write("\x00" * fill)
+    puts "ROM File size: #{f.size} bytes"
+    @s.close
+    @s.unlink
     puts "Done"
   end
 

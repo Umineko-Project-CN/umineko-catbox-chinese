@@ -13,5 +13,5 @@ let pattern =
     |> sprintf "[%s]"
 
 let script = File.ReadAllText "script.rb"
-let newScript = Regex.Replace(script, pattern, fun m -> $"@u%d{int m.Value[0]}")
+let newScript = Regex.Replace(script, pattern, fun m -> $"@u%d{int m.Value[0]}.")
 File.WriteAllText("script.rb", newScript)
