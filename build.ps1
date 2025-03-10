@@ -1,6 +1,7 @@
 #!/usr/bin/pwsh
 # Build requirements: Python 3, Ruby, .NET Runtime
 $ErrorActionPreference = "Stop"
+Set-StrictMode -Version Latest
 
 if (Test-Path font_manifests) {
     Write-Host "=== Copying font manifests... ==="
