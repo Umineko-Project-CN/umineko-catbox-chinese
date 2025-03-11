@@ -163,7 +163,7 @@ GM
 ????
 Story01 Letter of Bernkastel
 Story02 魔女们的七夕不甜蜜
-Story03 GM 战人
+Story03 GM战人
 Story04 朱志香的母亲节礼物
 Story05 朱志香与恋爱的咒语
 Story06 Memoirs of the ΛΔ
@@ -185,4 +185,4 @@ Story02 Last note of the golden witch
 Story16 某魔女猎人的采访磁带
 Story17 召唤师的信
 Story18 关于魔法的重要事项
-Story19 天使 17 岁 东 shi-44a
+Story19 天使17岁 东shi-44a
