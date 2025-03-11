@@ -23,7 +23,7 @@ Write-Host "=== Generating mod directory structure... ==="
 $MODBASE = "mods/contents/01006a300ba2c000/"
 New-Item -ItemType Directory -Path $MODBASE/romfs -Force | Out-Null
 Move-Item patch.rom $MODBASE/romfs/patch.rom -Force
-Copy-Item exefs $MODBASE/exefs -Recurse -Force
+Copy-Item exefs $MODBASE -Recurse -Force
 New-Item -ItemType Directory -Path mods/exefs_patches/umineko -Force | Out-Null
 Move-Item 7616F8963DACCD70E20FF3904E13367F96F2D9B3000000000000000000000000.ips mods/exefs_patches/umineko/ -Force
 Remove-Item patch.snr -Force
