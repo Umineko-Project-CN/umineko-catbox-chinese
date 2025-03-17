@@ -58,8 +58,11 @@ grim_title_replaces = {
     "(.*)@>$": "{capture}{snum}@>", # 已有ruby时
     "(.*)(.$)": "{capture_pre}@b.@<{capture_sub}{snum}@>" # 没有ruby时
 }
-grim_quote_pattern = "[｣』]'$" # 行尾引号
-grim_explain_pattern = "@[@z70.@r@r{grim_contents}@]" # 文本后条目注释框架
+grim_quote_pattern = "[｣』）]'$" # 行尾引号
+grim_explain_replaces = {
+    "@r": "@r{space}　 "
+}
+grim_explain_pattern = "@[@z25.@r@r@z70.{grim_contents}@]" # 文本后条目注释框架
 grim_content_pattern ="{space}{num}. {explain}" # 文本后条目注释
 
 # 选项、人名替换
@@ -297,6 +300,8 @@ def main_text(target_script, grimoire_json, chapter_lines, tips_lines, character
                     match_quote = re.search(grim_quote_pattern, lines[idx])
                     space = "　" if match_quote else "" # 根据是否有引号确定space
                     num = str(i + 1) # 根据i确定序号
+                    for pattern, replace in grim_explain_replaces.items():
+                        explain = re.sub(pattern, replace.format(space=space), explain)
                     grim_content = grim_content_pattern.format(space=space, num=num, explain=explain)
                     grim_contents += grim_content + '@r'
             grim_contents = grim_contents.rstrip('@r')
