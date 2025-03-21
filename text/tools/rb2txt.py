@@ -65,21 +65,27 @@ r_COLOR_replaces = {
 HALFWIDTH = '｢｣ｧｨｩｪｫｬｭｮｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝｰｯ—､ﾟﾞ･｡ゞ'
 HALFWIDTH_REPLACE = '「」ぁぃぅぇぉゃゅょあいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんーっ―、？！…。　，'
 
+def restore_text(target_script, restore_json):
+    script_str = "\n".join(target_script)
+    for item in restore_json:
+        if not item["pc"].startswith(("text_", "voice_")):
+            script_str = script_str.replace(item["cs"], item["pc"])
+    restored_script = script_str.split("\n")
+    return restored_script
+        
 # 一. 脚本文件读取
 with open(REjson, 'r', encoding='utf-8') as json_file:
-    RE_replaces = json.load(json_file)
+    restore_json = json.load(json_file)
 
 with open(JPscript, 'r', encoding='utf-8') as file:
+    file = [line.strip() for line in file.readlines()]
+    file = restore_text(file, restore_json)
+
     SCRIPT_lines = []
     CHAPTER_map = []
     EP_history= ""
     # 1. 读取
     for line in file:
-        # 读取并匹配 JSON 中的 RE_replace
-        for RE_replace in RE_replaces:
-            if line.startswith(RE_replace["cs"]):
-                if not RE_replace["pc"].startswith(("text_", "voice_")):
-                    line = RE_replace["pc"]
         if match := re.search(SCRIPT_pattern, line):
             text = match.group(1)
             SCRIPT_lines.append(text)

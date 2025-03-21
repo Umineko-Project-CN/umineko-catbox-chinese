@@ -14,7 +14,10 @@ os.chdir('..')
 # 1.0. 路径定义
 cn_script_base = 'story_cn/'
 jp_script_base = 'story_jp/'
+cn_re_script_base = 'story_re_cn/'
+jp_re_script_base = 'story_re_jp/'
 output_path = '../script.rb'
+output_re_path = '../script_re.rb'
 
 # 1.1. 文本修改部分定义
 # EP列表
@@ -197,18 +200,33 @@ def replace_alphanum(text):
     return(text)
 
 # 2.2 替换文本
-def main_text(target_script, grimoire_json, chapter_lines, tips_lines, characters_lines):
+def main_text(target_script, grimoire_json, restore_json, chapter_lines, tips_lines, characters_lines):
+    # 2.2.0 反和谐
+    def restore_text(target_script, restore_json):
+        script_str = "\n".join(target_script)
+        for item in restore_json:
+            if not item["pc"].startswith(("text_", "voice_")):
+                script_str = script_str.replace(item["cs"], item["pc"])
+        restored_script = script_str.split("\n")
+        return restored_script
+    
     # 2.2.1 替换正文
-    def replace_main_text(target_script):
+    def replace_main_text(target_script, mode):
         output = '\n'.join(target_script[:start_line]) + '\n'
         target_script = target_script[start_line:]
 
         # 处理每个EP和章节
         for ep, chapters in ep_list:
             for chapter in chapters:
-                print(f'正在替换{ep}_{chapter}。')
-                script_jp = f'{jp_script_base}{ep}_{chapter}.txt'
-                script_cn = f'{cn_script_base}{ep}_{chapter}.txt'
+                print(f'　正在替换{mode} {ep}_{chapter}。')
+
+                # 读取对应模式下的文本
+                script_jp = f'{jp_re_script_base if mode == "反和谐版" else jp_script_base}{ep}_{chapter}.txt'
+                script_cn = f'{cn_re_script_base if mode == "反和谐版" else cn_script_base}{ep}_{chapter}.txt'
+                if mode == "反和谐版" and not os.path.exists(script_jp):
+                    script_jp = f'{jp_script_base}{ep}_{chapter}.txt'
+                    script_cn = f'{cn_script_base}{ep}_{chapter}.txt'
+                
                 if not os.path.exists(script_jp):
                     break
 
@@ -310,11 +328,11 @@ def main_text(target_script, grimoire_json, chapter_lines, tips_lines, character
                 
         return '\n'.join(lines)
 
-    # 2.2.3 替换章节标题、Tips和Characters
+    # 2.2.3 替换章节标题、Tips、Characters
     def replace_titles_tips_characters(output, chapter_lines, tips_lines, characters_lines):
         output = re.sub('\'うみねこのなく頃に','\'海猫鸣泣之时',output)
 
-        # 解析Tips和Characters
+        # 解析Tips、Characters
         tips_pairs = []
         for i, line in enumerate(tips_lines, start=1):
             parts = line.split(',')
@@ -375,16 +393,22 @@ def main_text(target_script, grimoire_json, chapter_lines, tips_lines, character
         return output
 
     # 执行
-    output, target_script = replace_main_text(target_script)
-    print("正文替换完成。")
-    output = replace_annotations(output, grimoire_json)
-    print("注释替换完成。")
-    output = replace_titles_tips_characters(output, chapter_lines, tips_lines, characters_lines)
-    print("章节标题、Tips和Characters替换完成。")
-    output = replace_names(output)
-    print("选项和人名替换完成。")
+    def process_text(script, mode):
+        print(f"正在替换{mode} 正文：")
+        output, target_script = replace_main_text(script, mode)
+        print(f"正在替换{mode} 注释。")
+        output = replace_annotations(output, grimoire_json)
+        print(f"正在替换{mode} 章节标题、Tips、Characters。")
+        output = replace_titles_tips_characters(output, chapter_lines, tips_lines, characters_lines)
+        print(f"正在替换{mode} 选项和人名。")
+        output = replace_names(output)
+        return output, target_script
+    
+    target_script_re = restore_text(target_script, restore_json)
+    output, target_script = process_text(target_script, "原始版")
+    output_re, target_script_re = process_text(target_script_re, "反和谐版")
 
-    return output, target_script
+    return output, target_script, output_re, target_script_re
 
 # 2.3 增加代码
 def main_code(script_lines):
@@ -410,13 +434,15 @@ def main_code(script_lines):
 # 3.1 读取
 target_script = parse('misc/main.rb')
 grimoire_json = parse('misc/grimoire.json')
+restore_json = parse('misc/text_restore.json')
 chapter_lines = parse('misc/chapters.txt')
 tips_lines = parse('misc/tips.txt')
 characters_lines = parse('misc/characters.txt')
 
 # 3.2 替换文本
-output, trans_target_script = main_text(target_script, grimoire_json, chapter_lines, tips_lines, characters_lines)
+output, trans_target_script, output_re, trans_target_script_re = main_text(target_script, grimoire_json, restore_json, chapter_lines, tips_lines, characters_lines)
 script_lines = (output + '\n' + '\n'.join(trans_target_script)).splitlines()
+script_lines_re = (output_re + '\n' + '\n'.join(trans_target_script_re)).splitlines()
 
 # 3.3 增加代码
 # script_lines = main_code(script_lines)
@@ -424,3 +450,7 @@ script_lines = (output + '\n' + '\n'.join(trans_target_script)).splitlines()
 # 3.4 将修改后的内容写回script.rb文件
 with open(output_path, 'w', encoding='utf-8') as f:
     f.writelines('\n'.join(script_lines))
+print("已生成script.rb。")
+with open(output_re_path, 'w', encoding='utf-8') as f:
+    f.writelines('\n'.join(script_lines_re))
+print("已生成script_re.rb。")
