@@ -76,7 +76,7 @@ else {
     # Public build
     Set-Location mods
     if ($env:SKIP_ARCHIVE -ne "1") {
-        Compress-Archive -Path * -DestinationPath ../patch_atmos.zip -Force
+        Compress-Archive -Path * -DestinationPath ../patch_atmos_re.zip -Force
     }
     Set-Location ..
     
@@ -85,6 +85,6 @@ else {
     Copy-Item mods/exefs_patches/umineko/*.ips UminekoCatboxChinese/exefs/ -Force
     
     if ($env:SKIP_ARCHIVE -ne "1") {
-        Compress-Archive -Path UminekoCatboxChinese -DestinationPath patch_yuzu.zip -Force
+        Compress-Archive -Path UminekoCatboxChinese -DestinationPath patch_yuzu_re.zip -Force
     }
 }
