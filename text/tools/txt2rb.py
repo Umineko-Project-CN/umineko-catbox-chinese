@@ -17,7 +17,7 @@ jp_script_base = 'story_jp/'
 cn_re_script_base = 'story_re_cn/'
 jp_re_script_base = 'story_re_jp/'
 output_path = '../script.rb'
-output_re_path = '../script_re.rb'
+output_re_path = '../script_rb.rb'
 
 # 1.1. 文本修改部分定义
 # EP列表
@@ -148,29 +148,6 @@ name_map = {
     'ベルンカステル': '贝伦卡斯泰露'
 }
 
-# 1.2. 代码修改部分定义
-# 新图片
-insert_bgs = [
-    "end_all00_01 = snr.bg 'end_all00_01', 65535",
-    "end_all00_02 = snr.bg 'end_all00_02', 65535"
-]
-target_bgs = 'snr.write_bgs'
-
-# 图片调用：end_all00
-target_lines_endall00 = [
-"s.ins 0x4f, :addr_0x92d69, []",
-"s.ins 0x4f, :addr_0x92dcd, [412, -1]",
-"s.ins 0xcb",
-"s.ins 0xc1, 18, byte(3), 0, byte(1), 5801",
-"s.ins 0xc3, 18, 5, byte(1), -18",
-]
-insert_lines_endall00 = [
-    "s.ins 0xcb",
-    "s.ins 0xc1, 19, byte(1), 0, byte(0), end_all00_01",
-    "s.ins 0xcb",
-    "s.ins 0xc1, 19, byte(1), 0, byte(0), end_all00_02",
-]
-
 # # # # # # # # # # # # # # #
 # 2. 函数
 # # # # # # # # # # # # # # #
@@ -200,15 +177,15 @@ def replace_alphanum(text):
     return(text)
 
 # 2.2 替换文本
-def main_text(target_script, grimoire_json, restore_json, chapter_lines, tips_lines, characters_lines):
+def main_text(target_script, grimoire_json, fix_json, restore_json, chapter_lines, tips_lines, characters_lines):
     # 2.2.0 反和谐
-    def restore_text(target_script, restore_json):
+    def fix_or_restore(target_script, json):
         script_str = "\n".join(target_script)
-        for item in restore_json:
+        for item in json:
             if not item["pc"].startswith(("text_", "voice_")):
                 script_str = script_str.replace(item["cs"], item["pc"])
-        restored_script = script_str.split("\n")
-        return restored_script
+        changed_script = script_str.split("\n")
+        return changed_script
     
     # 2.2.1 替换正文
     def replace_main_text(target_script, mode):
@@ -403,29 +380,13 @@ def main_text(target_script, grimoire_json, restore_json, chapter_lines, tips_li
         print(f"正在替换{mode} 选项和人名。")
         output = replace_names(output)
         return output, target_script
-    
-    target_script_re = restore_text(target_script, restore_json)
+
+    target_script = fix_or_restore(target_script, fix_json) # 代码修正
+    target_script_re = fix_or_restore(target_script, restore_json) # 代码反和谐
     output, target_script = process_text(target_script, "原始版")
     output_re, target_script_re = process_text(target_script_re, "反和谐版")
 
     return output, target_script, output_re, target_script_re
-
-# 2.3 增加代码
-def main_code(script_lines):
-    # 新图片
-    for i, line in enumerate(script_lines):
-        if target_bgs in line:
-            script_lines[i:i] = insert_bgs
-            break
-
-    # 图片调用：end_all00
-    for i in range(len(script_lines) - len(target_lines_endall00) + 1):
-        if script_lines[i:i + len(target_lines_endall00)] == target_lines_endall00:
-            # 把新内容增加到这一行之后
-            script_lines[i + len(target_lines_endall00):i + len(target_lines_endall00)] = insert_lines_endall00
-            break
-
-    return script_lines
 
 # # # # # # # # # # # # # # #
 # 3. 读取与保存
@@ -434,20 +395,18 @@ def main_code(script_lines):
 # 3.1 读取
 target_script = parse('misc/main.rb')
 grimoire_json = parse('misc/grimoire.json')
-restore_json = parse('misc/text_restore.json')
+fix_json = parse('misc/script_fix.json')
+restore_json = parse('misc/script_restore.json')
 chapter_lines = parse('misc/chapters.txt')
 tips_lines = parse('misc/tips.txt')
 characters_lines = parse('misc/characters.txt')
 
 # 3.2 替换文本
-output, trans_target_script, output_re, trans_target_script_re = main_text(target_script, grimoire_json, restore_json, chapter_lines, tips_lines, characters_lines)
+output, trans_target_script, output_re, trans_target_script_re = main_text(target_script, grimoire_json, fix_json, restore_json, chapter_lines, tips_lines, characters_lines)
 script_lines = (output + '\n' + '\n'.join(trans_target_script)).splitlines()
 script_lines_re = (output_re + '\n' + '\n'.join(trans_target_script_re)).splitlines()
 
-# 3.3 增加代码
-# script_lines = main_code(script_lines)
-
-# 3.4 将修改后的内容写回script.rb文件
+# 3.3 将修改后的内容写回script.rb文件
 with open(output_path, 'w', encoding='utf-8') as f:
     f.writelines('\n'.join(script_lines))
 print("已生成script.rb。")

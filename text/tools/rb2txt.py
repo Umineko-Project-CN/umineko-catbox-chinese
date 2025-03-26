@@ -9,7 +9,8 @@ os.chdir('..')
 
 # 路径
 JPscript = os.path.abspath("misc/main.rb")  # .rs文件路径
-REjson = os.path.abspath("misc/text_restore.json")  # .json文件路径
+FIXjson = os.path.abspath("misc/script_fix.json")  # 代码修正.json文件路径
+REjson = os.path.abspath("misc/script_restore.json")  # 代码反和谐.json文件路径
 JP_dir = os.path.abspath("story_jp")  # 输入文件保存目录
 JP_RE_dir = os.path.abspath("story_re_jp")  # 输出文件保存目录
 os.makedirs('JP_RE_dir', exist_ok=True)
@@ -74,8 +75,10 @@ def restore_text(target_script, restore_json):
     return restored_script
         
 # 一. 脚本文件读取
-with open(REjson, 'r', encoding='utf-8') as json_file:
+with open(FIXjson, 'r', encoding='utf-8') as json_file:
     restore_json = json.load(json_file)
+with open(REjson, 'r', encoding='utf-8') as json_file:
+    restore_json.extend(json.load(json_file))
 
 with open(JPscript, 'r', encoding='utf-8') as file:
     file = [line.strip() for line in file.readlines()]
