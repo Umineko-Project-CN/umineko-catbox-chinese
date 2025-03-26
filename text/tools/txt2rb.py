@@ -17,7 +17,7 @@ jp_script_base = 'story_jp/'
 cn_re_script_base = 'story_re_cn/'
 jp_re_script_base = 'story_re_jp/'
 output_path = '../script.rb'
-output_re_path = '../script_rb.rb'
+output_re_path = '../script_re.rb'
 
 # 1.1. 文本修改部分定义
 # EP列表
