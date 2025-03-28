@@ -3,12 +3,21 @@
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 
+$restore = $args.Count -gt 0 -and $args[0] -eq '-r'
+Write-Host "@@ $($restore ? 'Restored' : 'Original') @@"
+Write-Host "=== Preparing files... ==="
+Copy-Item -Recurse -Force -Container:$false ./romfs_original ./romfs
+if ($restore) {
+    Copy-Item -Recurse -Force -Container:$false ./romfs_restored ./romfs
+}
+Copy-Item -Recurse -Force @($restore ? './script_restored.rb' : './script_original.rb') ./script.rb
+
 if (Test-Path font_manifests) {
     Write-Host "=== Copying font manifests... ==="
     Copy-Item font_manifests/regular repack/rom-repack/font/regular -Force
     Copy-Item font_manifests/bold repack/rom-repack/font/bold -Force
     Write-Host "=== Running localization script... ==="
-    dotnet fsi .\ReplaceChars.fsx
+    dotnet fsi ./ReplaceChars.fsx
 }
 
 Write-Host "=== Building romfs... ==="
@@ -44,9 +53,10 @@ elseif (Test-Path env:UMINEKO_TARGET_YUZU) {
 }
 else {
     # Public build
+    $suffix = $restore ? '_restored' : ''
     Set-Location mods
     if ($env:SKIP_ARCHIVE -ne "1") {
-        Compress-Archive -Path * -DestinationPath ../patch_atmos.zip -Force
+        Compress-Archive -Path * -DestinationPath "../patch_atmos$suffix.zip" -Force
     }
     Set-Location ..
     
@@ -55,6 +65,10 @@ else {
     Copy-Item mods/exefs_patches/umineko/*.ips UminekoCatboxChinese/exefs/ -Force
     
     if ($env:SKIP_ARCHIVE -ne "1") {
-        Compress-Archive -Path UminekoCatboxChinese -DestinationPath patch_yuzu.zip -Force
+        Compress-Archive -Path UminekoCatboxChinese -DestinationPath "patch_yuzu$suffix.zip" -Force
     }
 }
+
+Write-Host "=== Cleaning up... ==="
+Remove-Item -Recurse -Force ./romfs
+Remove-Item -Force ./script.rb
