@@ -4,13 +4,14 @@ $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 
 $restore = $args.Count -gt 0 -and $args[0] -eq '-r'
-Write-Host "@@ $($restore ? 'Restored' : 'Original') @@"
+Write-Host $(if ($restore) { "@@ Restored @@" } else { "@@ Original @@" })
 Write-Host "=== Preparing files... ==="
-Copy-Item -Recurse -Force -Container:$false ./romfs_original ./romfs
+New-Item -ItemType Directory -Path ./romfs -Force | Out-Null
+Copy-Item -Recurse -Force ./romfs_original/* ./romfs
 if ($restore) {
-    Copy-Item -Recurse -Force -Container:$false ./romfs_restored ./romfs
+    Copy-Item -Recurse -Force ./romfs_restored/* ./romfs
 }
-Copy-Item -Recurse -Force @($restore ? './script_restored.rb' : './script_original.rb') ./script.rb
+Copy-Item -Recurse -Force $(if ($restore) { './script_restored.rb' } else { './script_original.rb' })  ./script.rb
 
 if (Test-Path font_manifests) {
     Write-Host "=== Copying font manifests... ==="
@@ -53,7 +54,7 @@ elseif (Test-Path env:UMINEKO_TARGET_YUZU) {
 }
 else {
     # Public build
-    $suffix = $restore ? '_restored' : ''
+    $suffix = if ($restore) { '_restored' } else { '' }
     Set-Location mods
     if ($env:SKIP_ARCHIVE -ne "1") {
         Compress-Archive -Path * -DestinationPath "../patch_atmos$suffix.zip" -Force
