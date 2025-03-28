@@ -41,6 +41,7 @@ ALPHANUM_replaces = {
     r"@@b\.@<r(.*?)@>": r"@r@b.@<{text}@>",
 }
 # 匹配文本行、章节标题、Tips、Characters
+USHORT_pattern = r's\.ins 0x86, ushort\({ushort}\), byte\([01]\), byte\([01]\),'
 TEXTLINE_pattern = r's.ins 0xa0, byte(1), '
 CHAPTER_pattern = r'(s\.ins 0xa0, byte\(1\), )(.*)'
 TIP_pattern = r"^(snr\.tip\s+([0-6]),\s+([0-9]|1[0-9]|2[0-6]),\s*)'([^']*)',\s*'([^']*)'(.*)$"
@@ -179,13 +180,25 @@ def replace_alphanum(text):
 # 2.2 替换文本
 def main_text(target_script, grimoire_json, fix_json, restore_json, chapter_lines, tips_lines, characters_lines):
     # 2.2.0 反和谐
-    def fix_or_restore(target_script, json):
-        script_str = "\n".join(target_script)
-        for item in json:
-            if not item["pc"].startswith(("text_", "voice_")):
-                script_str = script_str.replace(item["cs"], item["pc"])
-        changed_script = script_str.split("\n")
-        return changed_script
+    def script_replace(target_script, repair_json):
+            script_str = "\n".join(target_script)
+            for item in repair_json:
+                if not item["pc"].startswith(("text_", "voice_")):
+                    if "ushort" in item:
+                        # 如果存在 ushort,在匹配位置后替换第一个 cs
+                        pattern = USHORT_pattern.replace("{ushort}", item["ushort"])
+                        match = re.search(pattern, script_str)
+                        if match:
+                            end_pos = match.end()
+                            before = script_str[:end_pos]
+                            after = script_str[end_pos:]
+                            after = after.replace(item["cs"], item["pc"], 1)
+                            script_str = before + after
+                    else:
+                        # 如果不存在 ushort,替换所有匹配的 cs
+                        script_str = script_str.replace(item["cs"], item["pc"])
+            changed_script = script_str.split("\n")
+            return changed_script
     
     # 2.2.1 替换正文
     def replace_main_text(target_script, mode):
@@ -381,8 +394,8 @@ def main_text(target_script, grimoire_json, fix_json, restore_json, chapter_line
         output = replace_names(output)
         return output, target_script
 
-    target_script = fix_or_restore(target_script, fix_json) # 代码修正
-    target_script_re = fix_or_restore(target_script, restore_json) # 代码反和谐
+    target_script = script_replace(target_script, fix_json) # 代码修正
+    target_script_re = script_replace(target_script, restore_json) # 代码反和谐
     output, target_script = process_text(target_script, "原始版")
     output_re, target_script_re = process_text(target_script_re, "反和谐版")
 
