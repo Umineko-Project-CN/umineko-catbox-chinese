@@ -16,8 +16,8 @@ cn_script_base = 'story_cn/'
 jp_script_base = 'story_jp/'
 cn_re_script_base = 'story_re_cn/'
 jp_re_script_base = 'story_re_jp/'
-output_path = '../script.rb'
-output_re_path = '../script_re.rb'
+output_path = '../script_original.rb'
+output_re_path = '../script_restored.rb'
 
 # 1.1. 文本修改部分定义
 # EP列表
@@ -422,7 +422,7 @@ script_lines_re = (output_re + '\n' + '\n'.join(trans_target_script_re)).splitli
 # 3.3 将修改后的内容写回script.rb文件
 with open(output_path, 'w', encoding='utf-8') as f:
     f.writelines('\n'.join(script_lines))
-print("已生成script.rb。")
+print("已生成script_original.rb。")
 with open(output_re_path, 'w', encoding='utf-8') as f:
     f.writelines('\n'.join(script_lines_re))
-print("已生成script_re.rb。")
+print("已生成script_restored.rb。")
