@@ -5,121 +5,269 @@
         "pc": "s.ins 0x92, 0,"
     },
     {
-        "comment": "umi1_2 餐厅修正为客厅 - mdin_1a -> m1f_s1c",
-        "ushort": "1069",
+        "comment": "umi1_2 堂兄妹欢闹屏幕跳动 - 删除重复的文本自动推进 - d_continue",
+        "ushort": "1065",
+        "cs": "s.ins 0x88\ns.ins 0x88",
+        "pc": "s.ins 0x88"
+    },
+    {
+        "comment": "umi1_2 客厅上茶 - 餐厅修正为客厅 - mdin_1a -> m1f_s1c",
+        "ushort": "1069-1146",
         "cs": "s.ins 0x4f, :addr_0x92dcd, [363, -1]",
         "pc": "s.ins 0x4f, :addr_0x92dcd, [459, -1]"
     },
     {
-        "comment": "umi1_2 餐厅修正为客厅 - [mdin_1c, mdin_1c_bg] -> [m1f_s1a, m1f_s1a_bg]",
-        "ushort": "1077",
+        "comment": "umi1_2 客厅上茶 - 餐厅修正为客厅 - [mdin_1c, mdin_1c_bg] -> [m1f_s1a, m1f_s1a_bg]",
+        "ushort": "1069-1146",
         "cs": "s.ins 0x4f, :addr_0x92dcd, [366, 367]",
         "pc": "s.ins 0x4f, :addr_0x92dcd, [452, 453]"
     },
     {
-        "comment": "umi1_2 餐厅修正为客厅 - mdin_1a -> m1f_s1c",
-        "ushort": "1082",
-        "cs": "s.ins 0x4f, :addr_0x92dcd, [363, -1]",
-        "pc": "s.ins 0x4f, :addr_0x92dcd, [459, -1]"
-    },
-    {
-        "comment": "umi1_2 餐厅修正为客厅 - [mdin_1c, mdin_1c_bg] -> [m1f_s1a, m1f_s1a_bg]",
-        "ushort": "1085",
-        "cs": "s.ins 0x4f, :addr_0x92dcd, [366, 367]",
-        "pc": "s.ins 0x4f, :addr_0x92dcd, [452, 453]"
-    },
-    {
-        "comment": "umi1_2 餐厅修正为客厅 - mdin_1f -> m1f_s1c",
-        "ushort": "1092",
+        "comment": "umi1_2 客厅上茶 - 餐厅修正为客厅 - mdin_1f -> m1f_s1c",
+        "ushort": "1069-1146",
         "cs": "s.ins 0x4f, :addr_0x92dcd, [376, -1]",
         "pc": "s.ins 0x4f, :addr_0x92dcd, [459, -1]"
     },
     {
-        "comment": "umi1_2 餐厅修正为客厅 - [mdin_1c, mdin_1c_bg] -> [m1f_s1a, m1f_s1a_bg]",
-        "ushort": "1097",
-        "cs": "s.ins 0x4f, :addr_0x92dcd, [366, 367]",
-        "pc": "s.ins 0x4f, :addr_0x92dcd, [452, 453]"
-    },
-    {
-        "comment": "umi1_2 餐厅修正为客厅 - [mdin_1g, mdin_1g_bg] -> m1f_s1d",
-        "ushort": "1100",
+        "comment": "umi1_2 客厅上茶 - 餐厅修正为客厅 - [mdin_1g, mdin_1g_bg] -> m1f_s1d",
+        "ushort": "1069-1146",
         "cs": "s.ins 0x4f, :addr_0x92dcd, [379, 380]",
         "pc": "s.ins 0x4f, :addr_0x92dcd, [462, -1]"
     },
     {
-        "comment": "umi1_2 餐厅修正为客厅 - mdin_1a -> m1f_s1c",
-        "ushort": "1104",
-        "cs": "s.ins 0x4f, :addr_0x92dcd, [363, -1]",
-        "pc": "s.ins 0x4f, :addr_0x92dcd, [459, -1]"
+        "comment": "umi1_2 客厅上茶 - 添加图层清除，疑似没必要？",
+        "ushort": "1104"
     },
     {
-        "comment": "umi1_2 餐厅修正为客厅 - [mdin_1c, mdin_1c_bg] -> [m1f_s1a, m1f_s1a_bg]",
-        "ushort": "1113",
-        "cs": "s.ins 0x4f, :addr_0x92dcd, [366, 367]",
-        "pc": "s.ins 0x4f, :addr_0x92dcd, [452, 453]"
-    },
-    {
-        "comment": "umi1_2 餐厅修正为客厅 - mdin_1a -> m1f_s1c",
-        "ushort": "1122",
-        "cs": "s.ins 0x4f, :addr_0x92dcd, [363, -1]",
-        "pc": "s.ins 0x4f, :addr_0x92dcd, [459, -1]"
-    },
-    {
-        "comment": "umi1_2 餐厅修正为客厅 - mdin_1e -> m1f_s1c",
-        "ushort": "1137",
+        "comment": "umi1_2 客厅上茶 - 餐厅修正为客厅 - mdin_1e -> m1f_s1c",
+        "ushort": "1069-1146",
         "cs": "s.ins 0x4f, :addr_0x92dcd, [373, -1]",
         "pc": "s.ins 0x4f, :addr_0x92dcd, [459, -1]"
     },
     {
-        "comment": "umi1_2 餐厅修正为客厅 - [mdin_1c, mdin_1c_bg] -> [m1f_s1a, m1f_s1a_bg]",
-        "ushort": "1140",
-        "cs": "s.ins 0x4f, :addr_0x92dcd, [366, 367]",
-        "pc": "s.ins 0x4f, :addr_0x92dcd, [452, 453]"
+        "comment": "umi1_3 初见肖像画屏幕上移 - 删除动画后的等待时间，疑似没必要？",
+        "ushort": "1308"
     },
     {
-        "comment": "umi1_2 餐厅修正为客厅 - mdin_1a -> m1f_s1c",
-        "ushort": "1145",
-        "cs": "s.ins 0x4f, :addr_0x92dcd, [363, -1]",
-        "pc": "s.ins 0x4f, :addr_0x92dcd, [459, -1]"
+        "comment": "umi1_11 让治悼念纱音 - 删除文本 - PS3移植版误删？",
+        "ushort": "4662"
     },
     {
-        "comment": "umi1_11 删除文本 - PS3移植版误删？",
-        "ushort": "4662",
-        "cs": "",
-        "pc": ""
+        "comment": "umi1_18 茶会结束 - 删除Characters更新，疑似NS版已经修正？",
+        "ushort": "7501"
     },
     {
-        "comment": "umi2_8 正确匹配语音",
+        "comment": "umi2_8 纱音收戒指 - 正确匹配语音",
         "ushort": "10890",
         "cs": "@v15/20500578.",
         "pc": "@v15/20500599."
     },
     {
-        "comment": "umi2_11 修正BGM播放时机",
+        "comment": "umi2_10 嘉音对山羊 - 删除动画后的等待时间，疑似没必要？",
+        "ushort": "11607"
+    },
+    {
+        "comment": "umi2_11 新规则红字 - 修正BGM播放时机 - wait_on_d 0 -> wait_on_d 1",
         "ushort": "11891",
-        "cs": "s.ins 0x87, byte(0)",
-        "pc": "s.ins 0x87, byte(1)"
+        "cs": "s.ins 0x87, byte(0)\ns.ins 0x90, 48, 0, 0, 700",
+        "pc": "s.ins 0x87, byte(1)\ns.ins 0x90, 48, 0, 0, 700"
     },
     {
-        "comment": "umi2_14 修正表情时机，NS版已经修正",
-        "ushort": "13178",
-        "cs": "",
-        "pc": ""
+        "comment": "umi2_14 讨论朱志香密室 - 修正表情切换时机，NS版已经修正",
+        "ushort": "13178"
     },
     {
-        "comment": "umi2_20 正确匹配语音",
+        "comment": "umi2_19 里茶会开始 - 添加Characters更新，疑似NS版已经修正？",
+        "ushort": "14427"
+    },
+    {
+        "comment": "umi2_20 贝伦无语 - 正确匹配语音",
         "ushort": "14620",
         "cs": "@v28/92100088.",
         "pc": "@v28/92100087."
     },
     {
-        "comment": "umi2_",
+        "comment": "umi3_2 贝阿朵变玫瑰特效 - 把视频图层修正在人物后，疑似没必要？",
+        "ushort": "15425"
+    },
+    {
+        "comment": "umi3_5 蝴蝶从罗诺威身后出现 - 把图片图层修正在人物后 - z_order_override2 s0_17,s0_3",
+        "ushort": "16514",
+        "cs": "s.ins 0xc1, 17, byte(2), 0, byte(1), 1379\ns.ins 0xc3, 17, 5, byte(1), -17",
+        "pc": "s.ins 0xc1, 17, byte(2), 0, byte(1), 1379\ns.ins 0xc3, 17, 5, byte(1), -3"
+    },
+    {
+        "comment": "umi3_6 烧金藏 - 添加图层清除并修改视频的图层，疑似没必要？",
+        "ushort": "17094"
+    },
+    {
+        "comment": "umi3_6 倒挂路西法 - 删除动画后的等待时间，疑似没必要？",
+        "ushort": "17272"
+    },
+    {
+        "comment": "umi3_7 巨人兵视频 - 删除图层清除，NS版已经修正，疑似没必要？",
+        "ushort": "17594"
+    },
+    {
+        "comment": "umi3_7 师徒放狠话 - 修正表情切换时机与错置表情，NS版已经修正",
+        "ushort": "17617"
+    },
+    {
+        "comment": "umi3_7 瓦尔基莉亚变透明 - 调整图层RGB颜色，疑似没必要？",
+        "ushort": "17675"
+    },
+
+    {
+        "comment": "umi3_12 楼座果冻雨 - 调整雨的样式，NS版没必要",
+        "ushort": "19230"
+    },
+    {
+        "comment": "umi3_12 楼座求饶最后一句延迟 - 添加某个时机，疑似NS版已经修正？",
+        "ushort": "19281"
+    },
+    {
+        "comment": "umi3_17 夏娃面对南条变动作 - 添加清理缓存，疑似没必要？",
+        "ushort": "21301"
+    },
+    {
+        "comment": "umi3_17 蝴蝶黄金线特效 - 添加黑屏图层，疑似没必要？",
+        "ushort": "21514"
+    },
+    {
+        "comment": "umi3_17 黄金线特效 - 添加图层清除，疑似没必要？",
+        "ushort": "21524"
+    },
+    {
+        "comment": "umi3_17 黄金线特效 - 删除图层清除，疑似没必要？",
+        "ushort": "21525"
+    },
+    {
+        "comment": "umi3_17 战人放狠话音效 - 修正音效播放时机，疑似没必要？ - wait_on_d 1 -> wait_on_d 2",
+        "ushort": "21753",
+        "cs": "s.ins 0x87, byte(1)\ns.ins 0x95, 1, 35, 0, 1, 1000, 0, 1000",
+        "pc": "s.ins 0x87, byte(2)\ns.ins 0x95, 1, 35, 0, 1, 1000, 0, 1000"
+    },
+    {
+        "comment": "umi3_17 瓦尔基莉亚重现现场 - 修正表情切换时机，NS版已经修正",
+        "ushort": "21827"
+    },
+    {
+        "comment": "umi3_17 夏娃变表情 - 添加清理缓存，疑似没必要？",
+        "ushort": "21857"
+    },
+    {
+        "comment": "umi3_17 夏娃变表情 - 添加清理缓存，疑似没必要？",
+        "ushort": "21869"
+    },
+    {
+        "comment": "umi3_17 十八人红字 - 删除图层清除，NS版已经修正",
+        "ushort": "21941"
+    },
+    {
+        "comment": "umi3_17 十八人红字 - 添加图层清除，NS版已经修正",
+        "ushort": "21942"
+    },
+    {
+        "comment": "umi3_17 十八人红字 - 删除图层清除，NS版已经修正",
+        "ushort": "21944"
+    },
+    {
+        "comment": "umi3_17 十八人红字 - 添加图层清除，NS版已经修正",
+        "ushort": "21945"
+    },
+    {
+        "comment": "umi3_17 战人被蜘蛛网包围 - 修正表情切换图层 - lss s0_8 -> lss s1_8",
+        "ushort": "21973",
+        "cs": "s.ins 0x4f, :addr_0x92d9a, [8, 1606, -549, -8]",
+        "pc": "s.ins 0xc1, 8, byte(3), 2, byte(1), 1606\ns.ins 0x4f, :addr_0x926e2, [2, 1]",
+        "pc_pattern2": "s.ins 0x4f, :addr_0x92d9a, [8, 1606, -419, -8]\ns.ins 0x4f, :addr_0x926e2, [2, 1]"
+    },
+    {
+        "comment": "umi3_17 战人被蜘蛛网包围 - 添加图层清除 - 疑似没必要？",
+        "ushort": "21977"
+    },
+    {
+        "comment": "umi3_18 黑屏 - 删除雨特效 - 疑似没必要？",
+        "ushort": "22116"
+    },
+    {
+        "comment": "umi3_20 里茶会ED - 修改BGM音量与时机等 - 疑似没必要？",
+        "ushort": "22621"
+    },
+    {
+        "comment": "umi4_2 真里亚呜呜呜 - 正确匹配语音",
+        "ushort": "23111",
+        "cs": "@v13/40400045.",
+        "pc": "@v13/40400075."
+    },
+    {
+        "comment": "umi4_4 客厅讨论遗产 - 餐厅修正为客厅 - mdin_1a -> m1f_s1c",
+        "ushort": "23783-24063",
+        "cs": "s.ins 0x4f, :addr_0x92dcd, [363, -1]",
+        "pc": "s.ins 0x4f, :addr_0x92dcd, [459, -1]"
+    },
+    {
+        "comment": "umi4_4 客厅讨论遗产 - 餐厅修正为客厅 - mdin_1e -> [m1f_s1a, m1f_s1a_bg]",
+        "ushort": "23783-24063",
+        "cs": "s.ins 0x4f, :addr_0x92dcd, [373, -1]",
+        "pc": "s.ins 0x4f, :addr_0x92dcd, [452, 453]"
+    },
+    {
+        "comment": "umi4_4 客厅讨论遗产 - 餐厅修正为客厅 - [mdin_1c, mdin_1c_bg] -> [m1f_s1a, m1f_s1a_bg]",
+        "ushort": "23783-24063",
+        "cs": "s.ins 0x4f, :addr_0x92dcd, [366, 367]",
+        "pc": "s.ins 0x4f, :addr_0x92dcd, [452, 453]"
+    },
+    {
+        "comment": "umi4_4 客厅讨论遗产 - 餐厅修正为客厅 - [mdin_1g, mdin_1g_bg] -> m1f_s1d",
+        "ushort": "23783-24063",
+        "cs": "s.ins 0x4f, :addr_0x92dcd, [379, 380]",
+        "pc": "s.ins 0x4f, :addr_0x92dcd, [462, -1]"
+    },
+    {
+        "comment": "umi4_4 客厅讨论遗产 - 餐厅修正为客厅 - mdin_1f -> m1f_s1c",
+        "ushort": "23783-24063",
+        "cs": "s.ins 0x4f, :addr_0x92dcd, [376, -1]",
+        "pc": "s.ins 0x4f, :addr_0x92dcd, [459, -1]"
+    },
+    {
+        "comment": "umi4_4 客厅讨论遗产 - 餐厅修正为客厅 - mdin_1er -> [m1f_s1a, m1f_s1a_bg]",
+        "ushort": "23783-24063",
+        "cs": "s.ins 0x4f, :addr_0x92dcd, [374, -1]",
+        "pc": "s.ins 0x4f, :addr_0x92dcd, [452, 453]"
+    },
+    {
+        "comment": "umi4_",
+        "ushort": "25377",
+        "cs": "",
+        "pc": ""
+    },
+    {
+        "comment": "umi4_",
         "ushort": "",
         "cs": "",
         "pc": ""
     },
     {
-        "comment": "umi2_",
+        "comment": "umi4_",
+        "ushort": "",
+        "cs": "",
+        "pc": ""
+    },
+    {
+        "comment": "umi4_",
+        "ushort": "",
+        "cs": "",
+        "pc": ""
+    },
+    {
+        "comment": "umi4_",
+        "ushort": "",
+        "cs": "",
+        "pc": ""
+    },
+    {
+        "comment": "umi4_",
         "ushort": "",
         "cs": "",
         "pc": ""

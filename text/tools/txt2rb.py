@@ -181,11 +181,12 @@ def replace_alphanum(text):
 def main_text(target_script, grimoire_json, fix_json, restore_json, chapter_lines, tips_lines, characters_lines):
     # 2.2.0 反和谐
     def script_replace(target_script, repair_json):
-            script_str = "\n".join(target_script)
-            for item in repair_json:
-                if not item["pc"].startswith(("text_", "voice_")):
-                    if "ushort" in item:
-                        # 如果存在 ushort,在匹配位置后替换第一个 cs
+        script_str = "\n".join(target_script)
+        for item in repair_json:
+            if "pc" in item and not item["pc"].startswith(("text_", "voice_")):
+                if "ushort" in item:
+                    # 单ushort只替换一次
+                    if re.fullmatch(r"\d+", item["ushort"]):
                         pattern = USHORT_pattern.replace("{ushort}", item["ushort"])
                         match = re.search(pattern, script_str)
                         if match:
@@ -194,11 +195,29 @@ def main_text(target_script, grimoire_json, fix_json, restore_json, chapter_line
                             after = script_str[end_pos:]
                             after = after.replace(item["cs"], item["pc"], 1)
                             script_str = before + after
-                    else:
-                        # 如果不存在 ushort,替换所有匹配的 cs
-                        script_str = script_str.replace(item["cs"], item["pc"])
-            changed_script = script_str.split("\n")
-            return changed_script
+                    # 双ushort替换中间所有内容
+                    elif re.fullmatch(r"\d+-\d+", item["ushort"]):
+                        start_ushort, end_ushort = item["ushort"].split("-")
+                        start_pattern = USHORT_pattern.replace("{ushort}", start_ushort)
+                        end_pattern = USHORT_pattern.replace("{ushort}", end_ushort)
+
+                        start_match = re.search(start_pattern, script_str)
+                        end_match = re.search(end_pattern, script_str)
+                        if start_match and end_match:
+                            start_pos = start_match.end()
+                            end_pos = end_match.start()
+
+                            before = script_str[:start_pos]
+                            middle = script_str[start_pos:end_pos]
+                            after = script_str[end_pos:]
+                            middle = middle.replace(item["cs"], item["pc"])
+
+                            script_str = before + middle + after
+                else:
+                    # 无ushort替换全文所有内容
+                    script_str = script_str.replace(item["cs"], item["pc"])
+        changed_script = script_str.split("\n")
+        return changed_script
     
     # 2.2.1 替换正文
     def replace_main_text(target_script, mode):
