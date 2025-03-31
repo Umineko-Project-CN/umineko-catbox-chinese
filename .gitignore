@@ -1,5 +1,7 @@
-/patch_atmos.zip
-/patch_yuzu.zip
+/patch_atmos_original.zip
+/patch_yuzu_original.zip
+/patch_atmos_restored.zip
+/patch_yuzu_restored.zip
 /data/
 /script_jp.rb
 /script_replace.rb

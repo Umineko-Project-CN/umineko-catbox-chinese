@@ -54,7 +54,7 @@ elseif (Test-Path env:UMINEKO_TARGET_YUZU) {
 }
 else {
     # Public build
-    $suffix = if ($restore) { '_restored' } else { '' }
+    $suffix = if ($restore) { '_restored' } else { '_original' }
     Set-Location mods
     if ($env:SKIP_ARCHIVE -ne "1") {
         Compress-Archive -Path * -DestinationPath "../patch_atmos$suffix.zip" -Force
