@@ -559,12 +559,6 @@
         "pc": "s.ins 0x41, byte(0), ushort(17), 1000\ns.ins 0x41, byte(0), ushort(18), 612\ns.ins 0x41, byte(0), ushort(19), 612\ns.ins 0x41, byte(0), ushort(20), 627\ns.ins 0x4f, :addr_0x92d9a, [8, 786, -369, -8]"
     },
     {
-        "comment": "umi5_13 壁橱秀吉遇害：配合场景光还原RGB颜色",
-        "ushort": "38091",
-        "cs": "s.ins 0x95, 2, 44, 0, 1, 700, 0, 1000",
-        "///pc": "s.ins 0x95, 2, 44, 0, 1, 700, 0, 1000\ns.ins 0x41, byte(0), ushort(17), 1000\ns.ins 0x41, byte(0), ushort(18), 1000\ns.ins 0x41, byte(0), ushort(19), 1000\ns.ins 0x41, byte(0), ushort(20), 1000"
-    },
-    {
         "comment": "umi5_13 壁橱拉百叶窗：客房修正为拉窗状态（[m2f_r4ao, m2f_r4ao_bg] -> [m2f_r4an, m2f_r4ans_bg]）",
         "ushort": "38062-38129",
         "cs": "s.ins 0x4f, :addr_0x92dcd, [650, 651]",
@@ -871,10 +865,10 @@
         "pc": "@v46/64501559."
     },
     {
-        "comment": "umi6_18 绘梨花装填蓝色真实：将背景与立绘添加至-4图层并调整RGB颜色，为-4图层添加进场粒子特效，还原-4图层，添加背景，调整RGB颜色",
+        "comment": "umi6_18 绘梨花装填蓝色真实：将背景与立绘添加至-4图层并调整RGB颜色，为-4图层添加进场粒子特效，还原-4图层，即刻添加背景，调整RGB颜色",
         "ushort": "48609",
         "cs": "s.ins 0x4f, :addr_0x92d9a, [9, 9243, 0, -9]",
-        "pc": "s.ins 0xcc, byte(1)\ns.ins 0xc0, -4\ns.ins 0x8a, byte(0)\ns.ins 0x83, byte(0), 10\ns.ins 0x4f, :addr_0x92d69, []\ns.ins 0x4f, :addr_0x92dcd, [1657, -1]\ns.ins 0x4f, :addr_0x92d9a, [4, 9242, 0, -4]\ns.ins 0xc3, -4, 24, byte(1), 1\ns.ins 0xc3, -4, 31, byte(1), 1000\ns.ins 0xc3, -4, 28, byte(1), 250\ns.ins 0xc3, -4, 29, byte(1), 250\ns.ins 0xc3, -4, 30, byte(1), 1000\ns.ins 0xc3, -4, 68, byte(1), 1000\ns.ins 0x8e, 0, 0, 0, byte(0)\ns.ins 0xc3, -4, 68, byte(2), 120\ns.ins 0xc4, -4, byte(1), 68\ns.ins 0xcc, byte(1)\ns.ins 0xc0, -4\ns.ins 0xcb\ns.ins 0xcd\ns.ins 0x8e, 0, 0, 0, byte(0)\ns.ins 0xcc, byte(0)\ns.ins 0xc1, 1, byte(2), 0, byte(1), 1657\ns.ins 0x4f, :addr_0x92d9a, [25, 9243, 0, -25]\ns.ins 0xc3, 3, 9, byte(1), Register.new(17)\ns.ins 0xc3, 3, 6, byte(1), 250\ns.ins 0xc3, 3, 7, byte(0), 250\ns.ins 0xc3, 3, 8, byte(0), 1000\ns.ins 0x4f, :addr_0x92d9a, [9, 9243, 0, -9]"
+        "pc": "s.ins 0xcc, byte(1)\ns.ins 0xc0, -4\ns.ins 0x8a, byte(0)\ns.ins 0x83, byte(0), 10\ns.ins 0x4f, :addr_0x92d69, []\ns.ins 0x4f, :addr_0x92dcd, [1657, -1]\ns.ins 0x4f, :addr_0x92d9a, [4, 9242, 0, -4]\ns.ins 0xc3, -4, 24, byte(1), 1\ns.ins 0xc3, -4, 31, byte(1), 1000\ns.ins 0xc3, -4, 28, byte(0)\ns.ins 0xc3, -4, 29, byte(0)\ns.ins 0xc3, -4, 30, byte(1), 1000\ns.ins 0xc3, -4, 68, byte(1), 1000\ns.ins 0x8e, 0, 0, 0, byte(0)\ns.ins 0xc3, -4, 68, byte(2), 120\ns.ins 0xc4, -4, byte(1), 68\ns.ins 0xcc, byte(1)\ns.ins 0xc0, -4\ns.ins 0xcb\ns.ins 0xcd\ns.ins 0x8e, 0, 0, 0, byte(0)\ns.ins 0xcc, byte(0)\ns.ins 0xc1, 1, byte(2), 0, byte(1), 1657\ns.ins 0xc3, 3, 9, byte(1), Register.new(17)\ns.ins 0xc3, 3, 6, byte(0)\ns.ins 0xc3, 3, 7, byte(0)\ns.ins 0xc3, 3, 8, byte(1), 1000\ns.ins 0x4f, :addr_0x92d9a, [9, 9243, 0, -9]"
     },
     {
         "comment": "umi6_20 添加棕底图层与黑底图层，疑似没有区别？",
