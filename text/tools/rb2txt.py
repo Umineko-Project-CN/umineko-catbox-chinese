@@ -17,6 +17,7 @@ JP_RE_dir = os.path.abspath("story_re_jp")  # 输出文件保存目录
 # 表达式
 FILENAME_pattern = r"{EP}_{CH}.txt" # 文件名
 # 源文本匹配
+USHORT_pattern = r's\.ins 0x86, ushort\({ushort}\), byte\([01]\), byte\([01]\),'
 SCRIPT_pattern = r"s\.ins\s.*byte.*,\s'(.*)'" # 匹配源文本
 SCRIPT_EP_pattern = "s.ins 0xa0, byte(0)," # 匹配EP标题
 SCRIPT_CH_pattern = "s.ins 0xa0, byte(1)," # 匹配章节标题
@@ -69,9 +70,40 @@ def restore_text(target_script, restore_json):
     script_str = "\n".join(target_script)
     for item in restore_json:
         if "pc" in item and not item["pc"].startswith(("text_", "voice_")):
-            script_str = script_str.replace(item["cs"], item["pc"])
-    restored_script = script_str.split("\n")
-    return restored_script
+            if "ushort" in item:
+                # 单ushort只替换一次
+                if re.fullmatch(r"\d+", item["ushort"]):
+                    pattern = USHORT_pattern.replace("{ushort}", item["ushort"])
+                    match = re.search(pattern, script_str)
+                    if match:
+                        end_pos = match.end()
+                        before = script_str[:end_pos]
+                        after = script_str[end_pos:]
+                        after = after.replace(item["cs"], item["pc"], 1)
+                        script_str = before + after
+                # 双ushort替换中间所有内容
+                elif re.fullmatch(r"\d+-\d+", item["ushort"]):
+                    start_ushort, end_ushort = item["ushort"].split("-")
+                    start_pattern = USHORT_pattern.replace("{ushort}", start_ushort)
+                    end_pattern = USHORT_pattern.replace("{ushort}", end_ushort)
+
+                    start_match = re.search(start_pattern, script_str)
+                    end_match = re.search(end_pattern, script_str)
+                    if start_match and end_match:
+                        start_pos = start_match.end()
+                        end_pos = end_match.start()
+
+                        before = script_str[:start_pos]
+                        middle = script_str[start_pos:end_pos]
+                        after = script_str[end_pos:]
+                        middle = middle.replace(item["cs"], item["pc"])
+
+                        script_str = before + middle + after
+            else:
+                # 无ushort替换全文所有内容
+                script_str = script_str.replace(item["cs"], item["pc"])
+    changed_script = script_str.split("\n")
+    return changed_script
         
 # 一. 脚本文件读取
 with open(FIXjson, 'r', encoding='utf-8') as json_file:
