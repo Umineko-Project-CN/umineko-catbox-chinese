@@ -955,6 +955,6 @@
         "comment": "umi8_18 EP8结尾第二部分：添加字幕",
         "ushort": "982",
         "cs": "s.ins 0x9c, '10/80101583', 1000, 1\ns.ins 0x9e, 2\ns.ins 0x9c, '10/80101584', 1000, 1\ns.ins 0x9e, 2\ns.ins 0x83, byte(0), 30\ns.ins 0x9c, '27/80701070', 1000, 1\ns.ins 0x9e, 2\ns.ins 0x9c, '27/80701071', 1000, 1\ns.ins 0x9e, 2",
-        "pc": "s.ins 0x9c, '10/80101583', 1000, 1\ns.ins 0x9e, 2\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_32\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x9c, '10/80101584', 1000, 1\ns.ins 0x9e, 2\ns.ins 0x83, byte(0), 30\ns.ins 0x9c, '27/80701070', 1000, 1\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_33\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x9e, 2\ns.ins 0x9c, '27/80701071', 1000, 1\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_34\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x9e, 2\ns.ins 0xc2, 30, byte(0)"
+        "pc": "s.ins 0x9c, '10/80101583', 1000, 1\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_32\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x9e, 2\ns.ins 0x9c, '10/80101584', 1000, 1\ns.ins 0x9e, 2\ns.ins 0x83, byte(0), 30\ns.ins 0x9c, '27/80701070', 1000, 1\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_33\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x9e, 2\ns.ins 0x9c, '27/80701071', 1000, 1\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_34\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x9e, 2\ns.ins 0xc2, 30, byte(0)"
     }
 ]
