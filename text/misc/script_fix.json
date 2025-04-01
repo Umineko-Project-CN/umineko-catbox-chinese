@@ -1,8 +1,13 @@
 [
     {
-        "comment": "添加新图片资源",
+        "comment": "添加新图片资源（EP5壁橱百叶窗）",
         "cs": "snr.write_bgs",
         "pc": "m2f_r4ans_bg = snr.bg 'm2f_r4ans_bg', 65535\nm2f_r4ars_bg = snr.bg 'm2f_r4ars_bg', 65535\nview_efes_sns = snr.bg 'view_efes_sns', 65535\nsnr.write_bgs"
+    },
+    {
+        "comment": "添加新图片资源（EP8结尾字幕）",
+        "cs": "snr.write_bgs",
+        "pc": "end_all00_01 = snr.bg 'end_all00_01', 65535\nend_all00_02 = snr.bg 'end_all00_02', 65535\nend_all00_03 = snr.bg 'end_all00_03', 65535\nend_all00_04 = snr.bg 'end_all00_04', 65535\nend_all00_05 = snr.bg 'end_all00_05', 65535\nend_all00_06 = snr.bg 'end_all00_06', 65535\nend_all00_07 = snr.bg 'end_all00_07', 65535\nend_all00_08 = snr.bg 'end_all00_08', 65535\nend_all00_10 = snr.bg 'end_all00_10', 65535\nend_all00_11 = snr.bg 'end_all00_11', 65535\nend_all00_12 = snr.bg 'end_all00_12', 65535\nend_all00_13 = snr.bg 'end_all00_13', 65535\nend_all00_14 = snr.bg 'end_all00_14', 65535\nend_all00_15 = snr.bg 'end_all00_15', 65535\nend_all00_17 = snr.bg 'end_all00_17', 65535\nend_all00_18 = snr.bg 'end_all00_18', 65535\nend_all00_20 = snr.bg 'end_all00_20', 65535\nend_all00_21 = snr.bg 'end_all00_21', 65535\nend_all00_22 = snr.bg 'end_all00_22', 65535\nend_all00_23 = snr.bg 'end_all00_23', 65535\nend_all00_24 = snr.bg 'end_all00_24', 65535\nend_all00_25 = snr.bg 'end_all00_25', 65535\nend_all00_26 = snr.bg 'end_all00_26', 65535\nend_all00_27 = snr.bg 'end_all00_27', 65535\nend_all00_28 = snr.bg 'end_all00_28', 65535\nend_all00_29 = snr.bg 'end_all00_29', 65535\nend_all00_30 = snr.bg 'end_all00_30', 65535\nend_all00_31 = snr.bg 'end_all00_31', 65535\nend_all00_32 = snr.bg 'end_all00_32', 65535\nend_all00_33 = snr.bg 'end_all00_33', 65535\nend_all00_34 = snr.bg 'end_all00_34', 65535\nsnr.write_bgs"
     },
     {
         "comment": "EP1-4 统一把BGM降到0",
@@ -535,12 +540,6 @@
         "pc": "@v28/52100462."
     },
     {
-        "comment": "umi5_12 贝伦嘲讽绘梨花：补全缺失文本语音",
-        "ushort": "37721",
-        "cs": "s.ins 0x95, 16, 17, 0, 0, 500, 0, 1000",
-        "pc": "s.ins 0x95, 16, 17, 0, 0, 500, 0, 1000\ns.ins 0x8e, 0, 0, 10, byte(0)\ns.ins 0x86, ushort(37722), byte(0), byte(1), 'ベルンカステル@r@v28/52100478.｢ｱﾗｿｳﾟｱﾘがﾄｳ｡@k@v28/52100479.･･ｿｼﾃ失望だﾜ､ヱリカ｡@k@v28/52100480.退屈だﾜ､ヱリカ｡@k@v28/52100481.ｺﾉ私ﾉ駒ﾆｼﾃ分身ﾉｱﾅﾀﾆﾓｵ手上げﾅﾝﾃ､本当ﾆ情ｹﾅｸﾃ笑ｴﾙﾜ｡@k@v28/52100482.ﾜｶﾗﾅｲﾅﾗ､ｲﾂﾏでﾓ沈黙ｼﾃﾃ頂戴｡@k@v28/52100483.ｿｼﾃﾜｶｯﾀ時だｹ口ｦ開ｲﾃ頂戴｡｣'"
-    },
-    {
         "comment": "umi5_13 罗诺威“ですな”：修正语音匹配",
         "ushort": "37841",
         "cs": "@v31/53100043.",
@@ -550,7 +549,7 @@
         "comment": "umi5_13 壁橱拉百叶窗：添加等待与音效，客房修正为拉窗状态（+ textoff，+ wait 167，+ seplay 1,25,50，+ [m2f_r4an, m2f_r4ans_bg]，+ view_efes_sns，+ flush 23）",
         "ushort": "38038",
         "cs": "'右代宮　秀吉@r@v06/51100180.｢･･念ﾉﾀﾒﾔ｡@k@v06/51100181.どｳｾ､ｺﾉ天気じｬ､夜ﾄ変ﾜﾗﾝﾜ｣'",
-        "pc": "'右代宮　秀吉@r@v06/51100180.｢･･念ﾉﾀﾒﾔ｡@k@v06/51100181.どｳｾ､ｺﾉ天気じｬ､夜ﾄ変ﾜﾗﾝﾜ｣'\ns.ins 0x95, 0, 58, 0, 1, 500, 0, 1000\ns.ins 0x8a, byte(0)\ns.ins 0x83, byte(0), 10\ns.ins 0x4f, :addr_0x92d69, []\ns.ins 0x4f, :addr_0x92dcd, [648, m2f_r4ans_bg]\ns.ins 0xcb\ns.ins 0xc1, 26, byte(2), 0, byte(1), view_efes_sns\ns.ins 0xc3, 26, 5, byte(1), -26\ns.ins 0x4f, :addr_0x926e2, [23, 0]"
+        "pc": "'右代宮　秀吉@r@v06/51100180.｢･･念ﾉﾀﾒﾔ｡@k@v06/51100181.どｳｾ､ｺﾉ天気じｬ､夜ﾄ変ﾜﾗﾝﾜ｣'\ns.ins 0x8a, byte(0)\ns.ins 0x83, byte(0), 10\ns.ins 0x95, 0, 58, 0, 1, 500, 0, 1000\ns.ins 0x4f, :addr_0x92d69, []\ns.ins 0x4f, :addr_0x92dcd, [648, m2f_r4ans_bg]\ns.ins 0xcb\ns.ins 0xc1, 26, byte(2), 0, byte(1), view_efes_sns\ns.ins 0xc3, 26, 5, byte(1), -26\ns.ins 0x4f, :addr_0x926e2, [23, 0]"
     },
     {
         "comment": "umi5_13 壁橱秀吉遇害：配合场景光调整RGB颜色（R156，G156，B160）",
@@ -673,7 +672,7 @@
         "pc": "s.ins 0x83, byte(0), 10\ns.ins 0x4f, :addr_0x93041, []"
     },
     {
-        "comment": "umi5_15 壁橱拉百叶窗：客房修正为拉窗状态",
+        "comment": "umi5_15 壁橱拉百叶窗回忆：客房修正为拉窗状态",
         "ushort": "39556",
         "cs": "s.ins 0x4f, :addr_0x92dcd, [650, 651]\ns.ins 0xcb\ns.ins 0xc1, 26, byte(2), 0, byte(1), 1903",
         "pc": "s.ins 0x4f, :addr_0x92dcd, [646, m2f_r4ars_bg]\ns.ins 0xcb\ns.ins 0xc1, 26, byte(2), 0, byte(1), view_efes_sns"
@@ -868,7 +867,7 @@
         "comment": "umi6_18 绘梨花装填蓝色真实：将背景与立绘添加至-4图层并调整RGB颜色，为-4图层添加进场粒子特效，还原-4图层，即刻添加背景，调整RGB颜色",
         "ushort": "48609",
         "cs": "s.ins 0x4f, :addr_0x92d9a, [9, 9243, 0, -9]",
-        "pc": "s.ins 0xcc, byte(1)\ns.ins 0xc0, -4\ns.ins 0x8a, byte(0)\ns.ins 0x83, byte(0), 10\ns.ins 0x4f, :addr_0x92d69, []\ns.ins 0x4f, :addr_0x92dcd, [1657, -1]\ns.ins 0x4f, :addr_0x92d9a, [4, 9242, 0, -4]\ns.ins 0xc3, -4, 24, byte(1), 1\ns.ins 0xc3, -4, 31, byte(1), 1000\ns.ins 0xc3, -4, 28, byte(0)\ns.ins 0xc3, -4, 29, byte(0)\ns.ins 0xc3, -4, 30, byte(1), 1000\ns.ins 0xc3, -4, 68, byte(1), 1000\ns.ins 0x8e, 0, 0, 0, byte(0)\ns.ins 0xc3, -4, 68, byte(2), 120\ns.ins 0xc4, -4, byte(1), 68\ns.ins 0xcc, byte(1)\ns.ins 0xc0, -4\ns.ins 0xcb\ns.ins 0xcd\ns.ins 0x8e, 0, 0, 0, byte(0)\ns.ins 0xcc, byte(0)\ns.ins 0xc1, 1, byte(2), 0, byte(1), 1657\ns.ins 0xc3, 3, 9, byte(1), Register.new(17)\ns.ins 0xc3, 3, 6, byte(0)\ns.ins 0xc3, 3, 7, byte(0)\ns.ins 0xc3, 3, 8, byte(1), 1000\ns.ins 0x4f, :addr_0x92d9a, [9, 9243, 0, -9]"
+        "pc": "s.ins 0xcc, byte(1)\ns.ins 0xc0, -4\ns.ins 0x8a, byte(0)\ns.ins 0x83, byte(0), 10\ns.ins 0x4f, :addr_0x92d69, []\ns.ins 0x4f, :addr_0x92dcd, [1657, -1]\ns.ins 0x4f, :addr_0x92d9a, [4, 9242, 0, -4]\ns.ins 0xc3, -4, 24, byte(1), 1\ns.ins 0xc3, -4, 31, byte(1), 1000\ns.ins 0xc3, -4, 28, byte(1), 224\ns.ins 0xc3, -4, 29, byte(1), 776\ns.ins 0xc3, -4, 30, byte(1), 1000\ns.ins 0xc3, -4, 68, byte(1), 1000\ns.ins 0x8e, 0, 0, 0, byte(0)\ns.ins 0xc3, -4, 68, byte(2), 120\ns.ins 0xc4, -4, byte(1), 68\ns.ins 0xcc, byte(1)\ns.ins 0xc0, -4\ns.ins 0xcb\ns.ins 0xcd\ns.ins 0x8e, 0, 0, 0, byte(0)\ns.ins 0xcc, byte(0)\ns.ins 0xc1, 3, byte(2), 0, byte(1), 1657\ns.ins 0xc3, 3, 24, byte(1), 1\ns.ins 0xc3, 3, 31, byte(1), 1000\ns.ins 0xc3, 3, 28, byte(1), 224\ns.ins 0xc3, 3, 29, byte(1), 776\ns.ins 0xc3, 3, 30, byte(1), 1000\ns.ins 0xc3, 3, 5, byte(1), -3\ns.ins 0x4f, :addr_0x92d9a, [9, 9243, 0, -9]"
     },
     {
         "comment": "umi6_20 添加棕底图层与黑底图层，疑似没有区别？",
@@ -887,21 +886,75 @@
         "pc": "@v13/70400282."
     },
     {
-        "comment": "umi7_17 ",
-        "ushort": "54695",
-        "cs": "",
-        "pc": ""
+        "comment": "umi7_17 贝阿朵找机关：修改图层清除的步骤顺序，疑似没有区别？",
+        "ushort": "54695"
     },
     {
-        "comment": "umi7_",
+        "comment": "umi7_19 秀吉在地下室被杀：添加清理缓存，疑似没有区别？",
+        "ushort": "56112"
+    },
+    {
+        "comment": "umi7_19 地下室钟表开关画反：左修正为右，但画面被截掉没有区别",
+        "ushort": "56265"
+    },
+    {
+        "comment": "umi7_19 真相贝阿朵哭诉：删除多余引号，NS版已经修正",
+        "ushort": "56819"
+    },
+    {
+        "comment": "umi7_19 理御“……”：修正语音缺失",
+        "ushort": "56928",
+        "cs": "@r｢･･･････････｡@k@v53/75300816.･･ごﾒﾝ､･･･ウィル･･･｡@k@v53/75300817.･･ﾓｳ､･･体が････｣",
+        "pc": "@r@v53/75300815.｢･･･････････｡@k@v53/75300816.･･ごﾒﾝ､･･･ウィル･･･｡@k@v53/75300817.･･ﾓｳ､･･体が････｣"
+    },
+    {
+        "comment": "umi8_7 朱志香表情不对文本：修改表情，但与PC版不同（a11_odoroki1 -> a11_komaru3）",
+        "ushort": "59714",
+        "cs": "s.ins 0x4f, :addr_0x92d9a, [8, 370, -369, -8]",
+        "pc": "s.ins 0x4f, :addr_0x92d9a, [8, 369, -369, -8]"
+    },
+    {
+        "comment": "umi8_11 德拉诺尔对阵黑山羊：延后BGM标题显示时间，疑似没必要？",
+        "ushort": "62253"
+    },
+    {
+        "comment": "umi8_11 战人“だろうな”：修正错置语音",
+        "ushort": "62467",
+        "cs": "@v10/80101001.",
+        "pc": "@v10/80101125."
+    },
+    {
+        "comment": "umi8_13 添加图层清除，疑似没有区别？",
+        "ushort": "63585"
+    },
+    {
+        "comment": "umi8_16 修改图层清除的步骤顺序",
         "ushort": "",
         "cs": "",
         "pc": ""
     },
     {
-        "comment": "umi8_",
+        "comment": "umi8_16 修改图层清除的步骤顺序",
         "ushort": "",
         "cs": "",
         "pc": ""
+    },
+    {
+        "comment": "umi8_16 修改图层清除的步骤顺序",
+        "ushort": "",
+        "cs": "",
+        "pc": ""
+    },
+    {
+        "comment": "umi8_18 EP8结尾第一部分：添加字幕",
+        "ushort": "982",
+        "cs": "s.ins 0x9c, '00/end_all00', 1000, 1",
+        "pc": "s.ins 0x9c, '00/end_all00', 1000, 1\ns.ins 0x83, byte(0), 46\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_01\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 110\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_02\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 108\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_03\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 116\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_04\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 100\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_05\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 76\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_06\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 68\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_07\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 56\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_08\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 108\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_05\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 72\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_10\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 40\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_11\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 136\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_12\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 72\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_13\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 116\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_14\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 120\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_15\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 100\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_15\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 80\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_17\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 56\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_18\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 132\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_05\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 60\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_20\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 104\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_21\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 100\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_22\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 112\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_23\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 68\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_24\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 90\ns.ins 0xc2, 30, byte(0)\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 195\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_25\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 184\ns.ins 0xc2, 30, byte(0)\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 162\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_26\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 139\ns.ins 0xc2, 30, byte(0)\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 108\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_27\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 91\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_28\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 99\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_29\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 98\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_30\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 183\ns.ins 0xc2, 30, byte(0)\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 120\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_31\ns.ins 0xc3, 30, 5, byte(1), -30"
+    },
+    {
+        "comment": "umi8_18 EP8结尾第二部分：添加字幕",
+        "ushort": "982",
+        "cs": "s.ins 0x9c, '10/80101583', 1000, 1\ns.ins 0x9e, 2\ns.ins 0x9c, '10/80101584', 1000, 1\ns.ins 0x9e, 2\ns.ins 0x83, byte(0), 30\ns.ins 0x9c, '27/80701070', 1000, 1\ns.ins 0x9e, 2\ns.ins 0x9c, '27/80701071', 1000, 1\ns.ins 0x9e, 2",
+        "pc": "s.ins 0x9c, '10/80101583', 1000, 1\ns.ins 0x9e, 2\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_32\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x9c, '10/80101584', 1000, 1\ns.ins 0x9e, 2\ns.ins 0x83, byte(0), 30\ns.ins 0x9c, '27/80701070', 1000, 1\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_33\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x9e, 2\ns.ins 0x9c, '27/80701071', 1000, 1\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_34\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x9e, 2\ns.ins 0xc2, 30, byte(0)"
     }
 ]
