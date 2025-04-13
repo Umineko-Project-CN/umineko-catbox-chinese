@@ -675,7 +675,7 @@
         "comment": "umi5_15 壁橱拉百叶窗回忆：客房修正为拉窗状态",
         "ushort": "39556",
         "cs": "s.ins 0x4f, :addr_0x92dcd, [650, 651]\ns.ins 0xcb\ns.ins 0xc1, 26, byte(2), 0, byte(1), 1903",
-        "pc": "s.ins 0x4f, :addr_0x92dcd, [646, m2f_r4ars_bg]\ns.ins 0xcb\ns.ins 0xc1, 26, byte(2), 0, byte(1), view_efes_sns"
+        "pc": "s.ins 0x4f, :addr_0x92dcd, [648, m2f_r4ans_bg]\ns.ins 0xcb\ns.ins 0xc1, 26, byte(2), 0, byte(1), view_efes_sns"
     },
     {
         "comment": "umi5_15 战人“……あぁ”：修正语音匹配",
@@ -689,7 +689,7 @@
     },
     {
         "comment": "umi5_16 绘梨花“無論です”：修正语音匹配",
-        "ushort": "39660",
+        "ushort": "39695",
         "cs": "@v46/54501281.",
         "pc": "@v46/54501310."
     },
@@ -770,8 +770,8 @@
     {
         "comment": "umi6_11 楼座“……”：修正语音缺失",
         "ushort": "44480",
-        "cs": "右代宮　楼座@r@v12/61400094.｢････････････､｣",
-        "pc": "右代宮　楼座@r｢････････････､｣"
+        "cs": "右代宮　楼座@r｢････････････､｣",
+        "pc": "右代宮　楼座@r@v12/61400094.｢････････････､｣"
     },
     {
         "comment": "umi6_11 嘉音被樱太郎卸下武器：修正错置表情（a12_ikari1 -> a12_odoroki1，+ flush 1，+ a12_ikari1，+ flush 65）",
@@ -840,16 +840,16 @@
         "pc": "@v27/60701167."
     },
     {
-        "comment": "umi6_18 绘梨花“定義確認”：修正语音匹配",
-        "ushort": "48503",
-        "cs": "@v46/64501545.",
-        "pc": "@v46/64501550."
-    },
-    {
         "comment": "umi6_18 贝阿朵“認めようぞ”：修正语音匹配",
         "ushort": "48497",
         "cs": "@v27/60701164.",
         "pc": "@v27/60701169."
+    },
+    {
+        "comment": "umi6_18 绘梨花“定義確認”：修正语音匹配",
+        "ushort": "48503",
+        "cs": "@v46/64501545.",
+        "pc": "@v46/64501550."
     },
     {
         "comment": "umi6_18 贝阿朵“認めようぞ”：修正语音匹配",
@@ -949,7 +949,7 @@
         "comment": "umi8_18 EP8结尾第一部分：添加字幕",
         "ushort": "982",
         "cs": "s.ins 0x9c, '00/end_all00', 1000, 1",
-        "pc": "s.ins 0x9c, '00/end_all00', 1000, 1\ns.ins 0x83, byte(0), 46\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_01\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 110\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_02\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 108\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_03\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 116\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_04\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 100\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_05\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 76\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_06\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 68\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_07\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 56\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_08\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 108\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_05\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 72\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_10\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 40\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_11\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 136\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_12\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 72\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_13\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 116\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_14\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 120\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_15\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 100\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_15\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 80\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_17\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 56\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_18\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 132\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_05\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 60\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_20\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 104\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_21\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 100\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_22\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 112\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_23\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 68\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_24\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 90\ns.ins 0xc2, 30, byte(0)\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 195\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_25\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 184\ns.ins 0xc2, 30, byte(0)\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 162\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_26\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 139\ns.ins 0xc2, 30, byte(0)\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 108\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_27\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 91\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_28\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 99\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_29\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 98\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_30\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 183\ns.ins 0xc2, 30, byte(0)\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 120\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_31\ns.ins 0xc3, 30, 5, byte(1), -30"
+        "pc": "s.ins 0x9c, '00/end_all00', 1000, 1\ns.ins 0x83, byte(0), 66\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_01\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 90\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_02\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 108\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_03\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 116\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_04\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 100\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_05\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 76\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_06\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 68\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_07\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 56\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_08\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 108\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_05\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 72\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_10\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 40\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_11\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 136\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_12\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 72\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_13\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 116\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_14\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 120\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_15\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 100\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_15\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 80\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_17\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 56\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_18\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 132\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_05\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 60\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_20\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 104\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_21\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 100\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_22\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 112\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_23\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 68\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_24\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 90\ns.ins 0xc2, 30, byte(0)\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 195\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_25\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 184\ns.ins 0xc2, 30, byte(0)\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 162\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_26\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 139\ns.ins 0xc2, 30, byte(0)\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 108\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_27\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 91\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_28\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 99\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_29\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 98\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_30\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 183\ns.ins 0xc2, 30, byte(0)\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x83, byte(0), 120\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_31\ns.ins 0xc3, 30, 5, byte(1), -30"
     },
     {
         "comment": "umi8_18 EP8结尾第二部分：添加字幕",

@@ -230,9 +230,9 @@ def main_text(target_script, grimoire_json, fix_json, restore_json, chapter_line
                 print(f'　正在替换{mode} {ep}_{chapter}。')
 
                 # 读取对应模式下的文本
-                script_jp = f'{jp_re_script_base if mode == "反和谐版" else jp_script_base}{ep}_{chapter}.txt'
-                script_cn = f'{cn_re_script_base if mode == "反和谐版" else cn_script_base}{ep}_{chapter}.txt'
-                if mode == "反和谐版" and not os.path.exists(script_jp):
+                script_jp = f'{jp_re_script_base if mode == "还原版" else jp_script_base}{ep}_{chapter}.txt'
+                script_cn = f'{cn_re_script_base if mode == "还原版" else cn_script_base}{ep}_{chapter}.txt'
+                if mode == "还原版" and not os.path.exists(script_jp):
                     script_jp = f'{jp_script_base}{ep}_{chapter}.txt'
                     script_cn = f'{cn_script_base}{ep}_{chapter}.txt'
                 
@@ -415,8 +415,8 @@ def main_text(target_script, grimoire_json, fix_json, restore_json, chapter_line
 
     target_script = script_replace(target_script, fix_json) # 代码修正
     target_script_re = script_replace(target_script, restore_json) # 代码反和谐
-    output, target_script = process_text(target_script, "原始版")
-    output_re, target_script_re = process_text(target_script_re, "反和谐版")
+    output, target_script = process_text(target_script, "初始版")
+    output_re, target_script_re = process_text(target_script_re, "还原版")
 
     return output, target_script, output_re, target_script_re
 
