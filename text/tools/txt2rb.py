@@ -16,7 +16,7 @@ cn_script_base = 'story_cn/'
 jp_script_base = 'story_jp/'
 cn_re_script_base = 'story_re_cn/'
 jp_re_script_base = 'story_re_jp/'
-output_path = '../script_original.rb'
+output_path = '../script_standard.rb'
 output_re_path = '../script_restored.rb'
 
 # 1.1. 文本修改部分定义
@@ -415,7 +415,7 @@ def main_text(target_script, grimoire_json, fix_json, restore_json, chapter_line
 
     target_script = script_replace(target_script, fix_json) # 代码修正
     target_script_re = script_replace(target_script, restore_json) # 代码反和谐
-    output, target_script = process_text(target_script, "初始版")
+    output, target_script = process_text(target_script, "基础版")
     output_re, target_script_re = process_text(target_script_re, "还原版")
 
     return output, target_script, output_re, target_script_re

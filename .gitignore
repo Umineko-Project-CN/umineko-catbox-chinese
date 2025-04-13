@@ -1,5 +1,5 @@
-/patch_atmos_original.zip
-/patch_yuzu_original.zip
+/patch_atmos_standard.zip
+/patch_yuzu_standard.zip
 /patch_atmos_restored.zip
 /patch_yuzu_restored.zip
 /data/
@@ -11,5 +11,5 @@
 /UminekoCatboxEnglish
 /UminekoCatboxChinese
 /romfs
-/romfs_original
+/romfs_standard
 /romfs_restored
