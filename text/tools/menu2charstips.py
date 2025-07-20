@@ -23,6 +23,7 @@ r_tips_end_line = tips_end_line = ";ep8"
 replaces = {
     # Charcters特殊排序
     r"chars_(.*?)_sak_": lambda m: rf"chars_{m.group(1)}_s99_", # 樱太郎
+    r"chars_6_2_be2_1": r"chars_6_2_bea_99", # EP6姐贝
     r"chars_6_3_ama_1": r"chars_6_3_enj_99", # EP6天草
     r"(.*)chars_6_3_enj_2(.*)": r"", # EP6缘寿多余
 
