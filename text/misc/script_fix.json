@@ -552,12 +552,6 @@
         "pc": "'右代宮　秀吉@r@v06/51100180.｢･･念ﾉﾀﾒﾔ｡@k@v06/51100181.どｳｾ､ｺﾉ天気じｬ､夜ﾄ変ﾜﾗﾝﾜ｣'\ns.ins 0x8a, byte(0)\ns.ins 0x83, byte(0), 10\ns.ins 0x95, 0, 58, 0, 1, 500, 0, 1000\ns.ins 0x4f, :addr_0x92d69, []\ns.ins 0x4f, :addr_0x92dcd, [648, m2f_r4ans_bg]\ns.ins 0xcb\ns.ins 0xc1, 26, byte(2), 0, byte(1), view_efes_sns\ns.ins 0xc3, 26, 5, byte(1), -26\ns.ins 0x4f, :addr_0x926e2, [23, 0]"
     },
     {
-        "comment": "umi5_13 壁橱秀吉遇害：配合场景光调整RGB颜色（R156，G156，B160）",
-        "ushort": "38086",
-        "cs": "s.ins 0x4f, :addr_0x92d9a, [8, 786, -369, -8]",
-        "pc": "s.ins 0x41, byte(0), ushort(17), 1000\ns.ins 0x41, byte(0), ushort(18), 612\ns.ins 0x41, byte(0), ushort(19), 612\ns.ins 0x41, byte(0), ushort(20), 627\ns.ins 0x4f, :addr_0x92d9a, [8, 786, -369, -8]"
-    },
-    {
         "comment": "umi5_13 壁橱拉百叶窗：客房修正为拉窗状态（[m2f_r4ao, m2f_r4ao_bg] -> [m2f_r4an, m2f_r4ans_bg]）",
         "ushort": "38062-38129",
         "cs": "s.ins 0x4f, :addr_0x92dcd, [650, 651]",
@@ -570,10 +564,22 @@
         "pc": "s.ins 0xc1, 26, byte(2), 0, byte(1), view_efes_sns"
     },
     {
+        "comment": "umi5_13 壁橱秀吉遇害：配合场景光调整RGB颜色（R156，G156，B160）",
+        "ushort": "38086",
+        "cs": "s.ins 0x4f, :addr_0x92d9a, [8, 786, -369, -8]",
+        "pc": "s.ins 0x41, byte(0), ushort(17), 1000\ns.ins 0x41, byte(0), ushort(18), 612\ns.ins 0x41, byte(0), ushort(19), 612\ns.ins 0x41, byte(0), ushort(20), 627\ns.ins 0x4f, :addr_0x92d9a, [8, 786, -369, -8]"
+    },
+    {
         "comment": "umi5_13 众人进秀吉房间：修改百叶窗图层层级（+ z_order_override s0_11,s0_0）",
         "ushort": "38136",
         "cs": "s.ins 0x4f, :addr_0x92dcd, [650, 651]",
         "pc": "s.ins 0x4f, :addr_0x92dcd, [650, 651]\ns.ins 0xc3, 11, 5, byte(1), 0"
+    },
+    {
+        "comment": "umi5_13 众人进秀吉房间：客房修正为拉窗开灯状态（[m2f_r4ao, m2f_r4ao_bg] -> [m2f_r4ar, m2f_r4ars_bg]）",
+        "ushort": "38136-38164",
+        "cs": "s.ins 0x4f, :addr_0x92dcd, [650, 651]",
+        "pc": "s.ins 0x4f, :addr_0x92dcd, [646, m2f_r4ars_bg]"
     },
     {
         "comment": "umi5_13 绘羽“あなた”：修正语音匹配",
@@ -594,6 +600,12 @@
         "pc": "s.ins 0x4f, :addr_0x92dcd, [650, 651]\ns.ins 0xc3, 11, 5, byte(1), 0"
     },
     {
+        "comment": "umi5_13 众人进秀吉房间：客房修正为拉窗开灯状态（[m2f_r4ao, m2f_r4ao_bg] -> [m2f_r4ar, m2f_r4ars_bg]）",
+        "ushort": "38178",
+        "cs": "s.ins 0x4f, :addr_0x92dcd, [650, 651]",
+        "pc": "s.ins 0x4f, :addr_0x92dcd, [646, m2f_r4ars_bg]"
+    },
+    {
         "comment": "umi5_13 镜头切到走廊：修改雨图层层级（+ z_order_override s0_11,s0_1）",
         "ushort": "38184",
         "cs": "s.ins 0x4f, :addr_0x92dcd, [544, 545]",
@@ -604,6 +616,12 @@
         "ushort": "38197",
         "cs": "s.ins 0x4f, :addr_0x92dcd, [650, 651]",
         "pc": "s.ins 0x4f, :addr_0x92dcd, [650, 651]\ns.ins 0xc3, 11, 5, byte(1), 0"
+    },
+    {
+        "comment": "umi5_13 众人进秀吉房间：客房修正为拉窗开灯状态（[m2f_r4ao, m2f_r4ao_bg] -> [m2f_r4ar, m2f_r4ars_bg]）",
+        "ushort": "38197",
+        "cs": "s.ins 0x4f, :addr_0x92dcd, [650, 651]",
+        "pc": "s.ins 0x4f, :addr_0x92dcd, [646, m2f_r4ars_bg]"
     },
     {
         "comment": "umi5_13 乡田“は、はい”：修正语音匹配",
@@ -624,16 +642,16 @@
         "pc": "s.ins 0x4f, :addr_0x92dcd, [650, 651]\ns.ins 0xc3, 11, 5, byte(1), 0"
     },
     {
+        "comment": "umi5_13 众人进秀吉房间：客房修正为拉窗开灯状态（[m2f_r4ao, m2f_r4ao_bg] -> [m2f_r4ar, m2f_r4ars_bg]）",
+        "ushort": "38211-38229",
+        "cs": "s.ins 0x4f, :addr_0x92dcd, [650, 651]",
+        "pc": "s.ins 0x4f, :addr_0x92dcd, [646, m2f_r4ars_bg]"
+    },
+    {
         "comment": "umi5_13 镜头切到走廊：修改雨图层层级（+ z_order_override s0_11,s0_1）",
         "ushort": "38228",
         "cs": "s.ins 0x4f, :addr_0x92dcd, [484, 485]",
         "pc": "s.ins 0x4f, :addr_0x92dcd, [484, 485]\ns.ins 0xc3, 11, 5, byte(1), -1"
-    },
-    {
-        "comment": "umi5_13 众人进秀吉房间：客房修正为拉窗开灯状态（[m2f_r4ao, m2f_r4ao_bg] -> [m2f_r4ar, m2f_r4ars_bg]）",
-        "ushort": "38129-38229",
-        "cs": "s.ins 0x4f, :addr_0x92dcd, [650, 651]",
-        "pc": "s.ins 0x4f, :addr_0x92dcd, [646, m2f_r4ars_bg]"
     },
     {
         "comment": "umi5_14 贝伦“応じるわ”：修正语音匹配",
@@ -956,5 +974,17 @@
         "ushort": "982",
         "cs": "s.ins 0x9c, '10/80101583', 1000, 1\ns.ins 0x9e, 2\ns.ins 0x9c, '10/80101584', 1000, 1\ns.ins 0x9e, 2\ns.ins 0x83, byte(0), 30\ns.ins 0x9c, '27/80701070', 1000, 1\ns.ins 0x9e, 2\ns.ins 0x9c, '27/80701071', 1000, 1\ns.ins 0x9e, 2",
         "pc": "s.ins 0x9c, '10/80101583', 1000, 1\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_32\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x9e, 2\ns.ins 0x9c, '10/80101584', 1000, 1\ns.ins 0x9e, 2\ns.ins 0x83, byte(0), 30\ns.ins 0x9c, '27/80701070', 1000, 1\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_33\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x9e, 2\ns.ins 0x9c, '27/80701071', 1000, 1\ns.ins 0xc1, 30, byte(2), 0, byte(1), end_all00_34\ns.ins 0xc3, 30, 5, byte(1), -30\ns.ins 0x9e, 2\ns.ins 0xc2, 30, byte(0)"
+    },
+    {
+        "comment": "saku_1 客房门修正为书房门（m_door1 -> m_door1k）",
+        "ushort": "5239-5394",
+        "cs": "s.ins 0x4f, :addr_0x92dcd, [350, -1]",
+        "pc": "s.ins 0x4f, :addr_0x92dcd, [352, -1]"
+    },
+    {
+        "comment": "saku_1 客房门修正为书房门（m_door2 -> m_door2k）",
+        "ushort": "5239-5394",
+        "cs": "s.ins 0x4f, :addr_0x92dcd, [356, -1]",
+        "pc": "s.ins 0x4f, :addr_0x92dcd, [358, -1]"
     }
 ]
